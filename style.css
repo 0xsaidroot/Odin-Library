@@ -10,7 +10,6 @@
 
     display: flex;
     align-items: center;
-
     justify-content: space-around;
 }
 .item{
@@ -27,3 +26,44 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
+dialog{
+    width: 500px;
+    height: 50%;
+    border-radius: 10px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+
+}
+dialog::backdrop{
+    opacity: .6;
+    background-color: gray;
+}
+.form-container{
+    padding: 40px;
+    font-size: 1.5rem;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.form-container h2{
+    text-align: center;
+}
+ form{
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+}
+form .lower-btn{
+    margin-top: auto;
+    margin-bottom: 20px;
+    margin-left:auto;
+    margin-right: auto;
+}
+.lower-btn button{
+    font-size: 1.2rem;
+    padding: .4em;
+    border-radius: 10px;
+}
+

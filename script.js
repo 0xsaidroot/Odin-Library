@@ -39,8 +39,9 @@ function displayLibrary(Library) {
 }
 
 const myLibrary = [];
+const bookDialog = document.querySelector('dialog');
 const container = document.querySelector('.container')
-
+const showDialog = (show) => show ? bookDialog.showModal() : bookDialog.close();
 
 
 let book1 = new Book(',o', 'ij', 'bgbunun', false);
