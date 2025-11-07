@@ -11,18 +11,18 @@
 
 <body>
     <div class="container">
-        <button onclick=showDialog(true)>Add Book</button>
     </div>
+    <button onclick=showDialog(true)>Add Book</button>
     <dialog closedBy="closerequest">
         <div class="form-container">
             <h2>Book Details</h2>
             <form>
                 <p><label for="title">Book Title</label><input type="text" name="book_title" id="title" required></p>
                 <p><label for="author">Book Author</label><input type="text" name="book_author" id="author" required></p>
-                <p><label for="pages">Pages Read</label><input type="number" name="pages_read" id="pages" required></p>
+                <p><label for="pages">Pages</label><input type="number" name="pages_read" id="pages" required></p>
                 <div class="lower-btn">
                     <button type="button" onclick="showDialog(false)">Cancel</button>
-                    <button type="submit">Add</button>
+                    <button type="submit" id="addBook">Add</button>
                 </div>
             </form>
         </div>
