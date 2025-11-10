@@ -68,6 +68,10 @@ addBtn.addEventListener('click', (event) => {
     let book = new Book(titleEntry, authorEntry, pageEntry, false);
     addBookToLibrary(book, myLibrary);
     bookDialog.close();
+    
+    authorInput.value = "";
+    titleInput.value = "";
+    pageInput.value = "";
 
     displayLibrary(myLibrary);
 
