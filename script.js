@@ -119,6 +119,21 @@ addBookToLibrary(book1, myLibrary);
 addBookToLibrary(book2, myLibrary);
 addBookToLibrary(book3, myLibrary);
 addBookToLibrary(book4, myLibrary);
+addBookToLibrary(book1, myLibrary);
+addBookToLibrary(book1, myLibrary);
+addBookToLibrary(book1, myLibrary);
+addBookToLibrary(book1, myLibrary);
+addBookToLibrary(book2, myLibrary);
+addBookToLibrary(book3, myLibrary);
+addBookToLibrary(book4, myLibrary);
+addBookToLibrary(book1, myLibrary);
+addBookToLibrary(book2, myLibrary);
+// addBookToLibrary(book3, myLibrary);
+// addBookToLibrary(book4, myLibrary);
+// addBookToLibrary(book1, myLibrary);
+// addBookToLibrary(book2, myLibrary);
+// addBookToLibrary(book3, myLibrary);
+// addBookToLibrary(book4, myLibrary);
 
 console.log(myLibrary);
 
