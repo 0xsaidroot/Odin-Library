@@ -1,9 +1,10 @@
 // Functions or Methods
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read,img) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.haveRead = read;
+    this.imgSrc = img;
 }
 function addBookToLibrary(obj, arr) {
     let uuid = self.crypto.randomUUID();
@@ -38,22 +39,25 @@ function displayLibrary(Library) {
         removeBtn.textContent = "Remove";
         readBook.textContent = book.haveRead ? "Read" : "Not yet read";
 
-        // If book has an image (data URL), display it inside imagePreview
-        if (book.image) {
+        if (book.imgSrc) {
             const img = document.createElement('img');
-            img.src = book.image;
+            img.src = book.imgSrc;
             img.alt = book.title + ' cover';
             imagePreview.innerHTML = '';
             imagePreview.appendChild(img);
+
+            topContain.appendChild(imagePreview);
+            bookTitle.classList.add('image-present');
         } else {
             imagePreview.innerHTML = '';
+            topContain.classList.add('no-image');
+            
         }
-
-        container.appendChild(bookItem);
+        
         topContain.appendChild(bookTitle);
+        container.appendChild(bookItem);
         bookItem.appendChild(topContain)
         bookItem.appendChild(lowerText);
-        topContain.appendChild(imagePreview);
         lowerText.appendChild(bookAuthor);
         lowerText.appendChild(bookPages);
         lowerText.appendChild(readBook);
@@ -84,36 +88,14 @@ addBtn.addEventListener("click", (event) => {
     let titleEntry = titleInput.value;
     let pageEntry = pageInput.value;
     let isReadEntry = isBookReadInput.checked ? true : false;
-    let book = new Book(titleEntry, authorEntry, pageEntry, isReadEntry);
+    const imageEntry = URL.createObjectURL(imageInput.files[0]);
+    let book = new Book(titleEntry, authorEntry, pageEntry, isReadEntry,imageEntry);
 
-    const file = imageInput.files && imageInput.files[0];
-    if (file) {
-        if (file.type && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                book.image = e.target.result; // data URL
-                addBookToLibrary(book, myLibrary);
-                bookDialog.close();
-
-                authorInput.value = "";
-                titleInput.value = "";
-                pageInput.value = "";
-                isBookReadInput.checked = false;
-                imageInput.value = "";
-
-                displayLibrary(myLibrary);
-            }
-            reader.readAsDataURL(file);
-            return; // wait for FileReader to finish
-        } else {
-            console.warn('Selected file is not an image. Ignoring file.');
-        }
-    }
-
-    // No image selected or invalid file type
+  
     addBookToLibrary(book, myLibrary);
     bookDialog.close();
 
+    imageInput.value = "";
     authorInput.value = "";
     titleInput.value = "";
     pageInput.value = "";
@@ -153,10 +135,7 @@ container.addEventListener("click", (event) => {
     }
     return;
 });
-// We read the selected file when the user clicks Add (using FileReader)
-// so no per-input handler is required here. If you want a live preview
-// inside the dialog before Add, we can add a preview element to the form
-// and set its src here.
+
 
 
 let book1 = new Book(",o", "ij", "bgbunun", false);
