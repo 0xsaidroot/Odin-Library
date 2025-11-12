@@ -82,10 +82,10 @@ height: 100%;
 }
 dialog{
     width: 500px;
-    height: 50%;
+    height: 500px;
     border-radius: 10px;
     position: absolute;
-    left: 30%;
+    left: 40%;
     top: 20%;
 
 }
@@ -104,14 +104,18 @@ dialog::backdrop{
 .form-container h2{
     text-align: center;
 }
- form{
-    display: flex;
-    flex-direction: column;
-    gap: 20%;
+form{
+display: grid;
+grid-template-columns: 1fr;
+gap: 10px;
+}
+form p{
+    display: grid;
+    padding: 10px 5px;
+    grid-template-columns:40% 1fr ;
 }
 form .lower-btn{
     margin-top: auto;
-    margin-bottom: 20px;
     margin-left:auto;
     margin-right: auto;
 }
