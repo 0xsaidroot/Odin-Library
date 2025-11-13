@@ -1,7 +1,36 @@
+@font-face {
+    font-family: 'Alex Brush';
+    src: url('font/AlexBrush-Regular.woff2') format('woff2'),
+        url('font/AlexBrush-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Kaushan Script';
+    src: url('font/KaushanScript-Regular.woff2') format('woff2'),
+        url('font/KaushanScript-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cantarell';
+    src: url('font/Cantarell-Regular.woff2') format('woff2'),
+        url('font/Cantarell-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Cantarell';
 }
 body{
     height: 100vh;
@@ -18,16 +47,19 @@ body{
     gap: 1em;
 }
 .no-image{
+    font-family: 'Kaushan Script';
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3rem; 
+
 }
 .image-present{
     position: absolute;
     top: 0%;
-    left: 45%;
-    font-size: 1.5rem;
+    left: 2%;
+    font-size: 1.2rem;
+    font-family: 'Alex Brush';
 }
 .imagePreview{
 width: 100%;
@@ -80,6 +112,12 @@ height: 100%;
     padding: 5px;
     border-radius: 5px;
 }
+.have-read{
+    background-color: #80b918;
+}
+.not-read{
+    background-color: #c1121f;
+}
 dialog{
     width: 500px;
     height: 500px;
@@ -113,6 +151,9 @@ form p{
     display: grid;
     padding: 10px 5px;
     grid-template-columns:40% 1fr ;
+}
+p input[type="text"]{
+    font-size: 1.4rem;
 }
 form .lower-btn{
     margin-top: auto;

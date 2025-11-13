@@ -35,7 +35,7 @@ function displayLibrary(Library) {
 
         bookTitle.textContent = book.title;
         bookAuthor.textContent = book.author;
-        bookPages.textContent = book.pages;
+        bookPages.textContent = 'Pages : '+book.pages;
         removeBtn.textContent = "Remove";
         readBook.textContent = book.haveRead ? "Read" : "Not yet read";
 
@@ -69,6 +69,7 @@ const showDialog = (show) =>
 
 Book.prototype.info = function () {
     this.haveRead = !this.haveRead;
+
 };
 // Variables
 const myLibrary = [];
@@ -88,11 +89,13 @@ addBtn.addEventListener("click", (event) => {
     let titleEntry = titleInput.value;
     let pageEntry = pageInput.value;
     let isReadEntry = isBookReadInput.checked ? true : false;
-    const imageEntry = URL.createObjectURL(imageInput.files[0]);
+    let imageFile = imageInput.files[0];
+    const imageEntry = (imageFile) ? URL.createObjectURL(imageFile) : "";
     let book = new Book(titleEntry, authorEntry, pageEntry, isReadEntry,imageEntry);
 
   
     addBookToLibrary(book, myLibrary);
+
     bookDialog.close();
 
     imageInput.value = "";
@@ -100,7 +103,6 @@ addBtn.addEventListener("click", (event) => {
     titleInput.value = "";
     pageInput.value = "";
     isBookReadInput.checked = false;
-    imageInput.value = "";
 
     displayLibrary(myLibrary);
 });
@@ -138,17 +140,17 @@ container.addEventListener("click", (event) => {
 
 
 
-let book1 = new Book(",o", "ij", "bgbunun", false);
-let book2 = new Book(",o", "ij", "unun", false);
-let book3 = new Book(",o", "ij", "unun", false);
-let book4 = new Book(",o", "ij", "unun", false);
+let book1 = new Book("Code Geass","Ichirō Ōkouchi",459,false,"images/Codegease.jpg");
+let book2 = new Book('FullMetal','Hiromu Arakawa',329,true,"images/fullmetal.jpg");
+let book3 = new Book('Jujutsu Kaisen',"Gege Akutami",212,true,"images/Jujutsu_kaisen.jpg");
+let book4 = new Book("Hunter X Hunter","Yoshiro Togashi",563,false,'images/hunter x hunter.jpg');
+
 
 addBookToLibrary(book1, myLibrary);
 addBookToLibrary(book2, myLibrary);
 addBookToLibrary(book3, myLibrary);
 addBookToLibrary(book4, myLibrary);
-addBookToLibrary(book1, myLibrary);
-addBookToLibrary(book1, myLibrary);
+
 
 
 
