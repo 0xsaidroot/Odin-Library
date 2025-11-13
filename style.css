@@ -119,7 +119,7 @@ height: 100%;
     background-color: #c1121f;
 }
 dialog{
-    width: 500px;
+    width: 600px;
     height: 500px;
     border-radius: 10px;
     position: absolute;
@@ -150,8 +150,13 @@ gap: 10px;
 form p{
     display: grid;
     padding: 10px 5px;
+    height: 12%;
     grid-template-columns:40% 1fr ;
 }
+ #check{
+    grid-template-columns:50% 1fr;
+    justify-items: flex-start;
+ }
 p input[type="text"]{
     font-size: 1.4rem;
 }
