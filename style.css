@@ -122,10 +122,7 @@ dialog{
     width: 600px;
     height: 500px;
     border-radius: 10px;
-    position: absolute;
-    left: 40%;
-    top: 20%;
-
+    place-self: center;
 }
 dialog::backdrop{
     opacity: .6;
@@ -135,6 +132,7 @@ dialog::backdrop{
     padding: 40px;
     font-size: 1.5rem;
     height: 100%;
+    width: 100%;
 
     display: grid;
     grid-template-rows: auto 1fr;
