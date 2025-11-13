@@ -143,7 +143,7 @@ container.addEventListener("click", (event) => {
 let book1 = new Book("Code Geass","Ichirō Ōkouchi",459,false,"images/Codegease.jpg");
 let book2 = new Book('FullMetal','Hiromu Arakawa',329,true,"images/fullmetal.jpg");
 let book3 = new Book('Jujutsu Kaisen',"Gege Akutami",212,true,"images/Jujutsu_kaisen.jpg");
-let book4 = new Book("Hunter X Hunter","Yoshiro Togashi",563,false,'images/hunter x hunter.jpg');
+let book4 = new Book("Hunter Hunter","Yoshiro Togashi",563,false,'images/hunter x hunter.jpg');
 
 
 addBookToLibrary(book1, myLibrary);
